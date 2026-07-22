@@ -12,7 +12,7 @@ class Contact(Base):
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String(255))
     email: Mapped[str] = mapped_column(String(255), unique=True)
-    telefono: Mapped[str | None] =  mapped_column(String(50), nullable=True)
+    phone: Mapped[str | None] =  mapped_column(String(50), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime, server_default=func.now() )
 
     notes: Mapped[list["Note"]] = relationship("Note", back_populates="contact")
