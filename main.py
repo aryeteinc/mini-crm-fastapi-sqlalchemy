@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from app.contacts.model import Contact  # noqa
-from app.notes.model import Note        # noqa
+
+import shared.models  # noqa
 from app.contacts.create.router import router as create_contact_router
 
 app = FastAPI(title="Mini CRM")
